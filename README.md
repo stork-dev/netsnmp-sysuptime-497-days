@@ -1,4 +1,4 @@
-# SNMP Issue: sysUpTime rolls over on 497 Days
+# SNMP Issue: sysUpTime rolls over on 497th Day
 
 
 Data type of sysUpTime in snmp is TimeTicks which is again a Counter32 in units of hundredth of a second. If we divide value by 100 then it is converted to seconds and increases rolling over limit to 100 times and you will avoid false alarms like device restarted But Again this will break RFC implementation, you have to customize/reconfigure manager who is polling sysUpTime.
